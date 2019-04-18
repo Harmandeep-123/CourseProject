@@ -20,9 +20,14 @@
 <div id="map"></div>
 <script>
 	var map;
-	var parks = [
-		{"park":"Yellowstone","coords":[44.4280,-110.5885]},
-		{"park":"Glacier","coords":[48.7596, -113.7870]}
+	var aboutMe = [
+		{"place":"Home Town","coords":[31.634308,74.873679]},
+		{"place":"Second Home","coords":[30.720451, 76.76697]},
+        {"place":"Currently Living","coords":[43.68402,  -79.759046]},
+        {"place":"Vacations","coords":[-36.853467,  174.765551]},
+        {"place":"first Job","coords":[-37.787621,  175.281319]},
+        {"place":"Beach Vacation","coords":[-36.759709, 175.497126]}
+
 		];
 
 	function initMap() {
@@ -32,7 +37,7 @@
 			mapTypeId: 'terrain'
 		});
 
-		mashParks(parks);
+		mashParks(aboutMe);
 	}
 
 	function mashParks(results) {
@@ -42,7 +47,7 @@
 		var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
-			label:results[i].park
+			label:results[i].place
 			});
 		}
 	}
